@@ -1,0 +1,9 @@
+1. Run your project in Visual Studio (F5)
+2. Select ALL the console output (Ctrl+A)
+3. Copy it (Ctrl+C)
+4. Go to the project folder in Windows Explorer
+5. Right-click → New → Text Document
+6. Name it: sample-output.txt
+7. Open with Notepad
+8. Paste your console output
+9. Save
