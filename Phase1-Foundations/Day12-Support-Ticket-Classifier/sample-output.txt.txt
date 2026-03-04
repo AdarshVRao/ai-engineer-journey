@@ -1,0 +1,53 @@
+## 🔷 Expected Output
+```
+╔══════════════════════════════════════════════╗
+║  Day 12 — Support Ticket Priority Classifier ║
+║  Multiclass Classification with ML.NET       ║
+╚══════════════════════════════════════════════╝
+
+Total labelled samples : 36
+HIGH   : 12
+MEDIUM : 12
+LOW    : 12
+
+Training samples : 30
+Test samples     : 6
+
+Training model on your labelled data...
+Training complete!
+
+╔══════════════════════════════════════════════╗
+║              Model Evaluation                ║
+╚══════════════════════════════════════════════╝
+Macro Accuracy    : 83.33%
+Micro Accuracy    : 83.33%
+Log Loss          : 0.4821
+  → Lower is better. 0 = perfect.
+
+── Per-Class Performance ─────────────────────
+
+Confusion Matrix:
+               Pred HIGH    Pred MED    Pred LOW
+────────────────────────────────────────────────
+Actual HIGH            2           0           0
+Actual MED             0           1           1
+Actual LOW             0           0           2
+
+╔══════════════════════════════════════════════╗
+║           New Ticket Predictions             ║
+╚══════════════════════════════════════════════╝
+
+Ticket    : Everything is down we cannot do anything urgent help
+Priority  : HIGH
+
+Ticket    : The invoice total is wrong it shows different amount
+Priority  : MEDIUM
+
+Ticket    : Please add an option to customise the colour theme
+Priority  : LOW
+
+Ticket    : Some users cannot login but others can
+Priority  : MEDIUM
+
+Ticket    : Need help understanding how billing works
+Priority  : LOW
