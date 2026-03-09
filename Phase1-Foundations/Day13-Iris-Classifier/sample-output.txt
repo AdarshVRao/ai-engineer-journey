@@ -1,0 +1,70 @@
+Expected Output
+```
+╔══════════════════════════════════════════════╗
+║     Day 13 — Iris Species Classifier         ║
+║     Mini-Project: ML.NET Multiclass          ║
+╚══════════════════════════════════════════════╝
+
+── Dataset Summary ───────────────────────────
+Total samples    : 150
+Iris-setosa      : 50
+Iris-versicolor  : 50
+Iris-virginica   : 50
+Features         : SepalLength, SepalWidth, PetalLength, PetalWidth
+
+Training samples : 120 (40 per species)
+Test samples     : 30  (10 per species)
+
+Training model...
+Training complete in 312ms!
+
+╔══════════════════════════════════════════════╗
+║              Model Evaluation                ║
+╚══════════════════════════════════════════════╝
+Macro Accuracy : 96.67%
+Micro Accuracy : 96.67%
+Log Loss       : 0.1823
+Log Loss Red.  : 0.8341
+  → Higher reduction = better model
+
+── Confusion Matrix ──────────────────────────
+                  Pred Setosa  Pred Versicol  Pred Virginica
+────────────────────────────────────────────────────────────
+Actual Setosa         10 ✅            0              0
+Actual Versicol        0           9 ✅           1 ❌
+Actual Virginica       0            0           10 ✅
+
+── Per-Species Accuracy ──────────────────────
+Iris-setosa         : 10/10 correct (100%)
+Iris-versicolor     : 9/10  correct (90%)
+Iris-virginica      : 10/10 correct (100%)
+
+╔══════════════════════════════════════════════╗
+║           New Flower Predictions             ║
+╚══════════════════════════════════════════════╝
+
+Note                             Expected             Predicted            Match
+────────────────────────────────────────────────────────────────────────────────
+Small petals — typical setosa    Iris-setosa          Iris-setosa          ✅
+Medium petals — borderline case  Iris-versicolor      Iris-versicolor      ✅
+Large petals — typical virginica Iris-virginica       Iris-virginica       ✅
+Edge case — could be versicolor  Iris-virginica       Iris-virginica       ✅
+Very small — clearly setosa      Iris-setosa          Iris-setosa          ✅
+
+New flowers: 5/5 correct
+
+╔══════════════════════════════════════════════╗
+║         Comparing Different Trainers         ║
+╚══════════════════════════════════════════════╝
+
+Trainer               Macro Acc    Micro Acc    Time (ms)
+──────────────────────────────────────────────────────────
+SDCA MaxEntropy         96.7%        96.7%         312ms
+LBFGS MaxEntropy        96.7%        96.7%         187ms
+NaiveBayes              93.3%        93.3%          42ms
+
+✅ Best model saved → iris_classifier_model.zip
+
+╔══════════════════════════════════════════════╗
+║          Day 13 Mini-Project Complete!       ║
+╚══════════════════════════════════════════════╝
